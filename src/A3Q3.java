@@ -80,14 +80,16 @@ public class A3Q3 {
             if (!jerrycan.frontIsClear() && jerrycan.isFacingWest() == true) {
 
                 jerrycan.turnLeft();
-                jerrycan.move();
+                if (jerrycan.frontIsClear()){
+                    
+                    jerrycan.move();
+                }
                 jerrycan.turnLeft();
             }
+            
+            
 
-            if (!jerrycan.frontIsClear() && jerrycan.isFacingSouth() == true) {
-
-                jerrycan.turnAround();
-            }
+            
 
 
 
