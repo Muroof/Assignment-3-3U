@@ -20,8 +20,6 @@ public class A3Q3 {
      */
     public static void main(String[] args) {
 
-
-
         // create a city
         City kw = new City();
 
@@ -33,9 +31,7 @@ public class A3Q3 {
         new Thing(kw, 1, 5);
         new Thing(kw, 1, 3);
 
-
         // create the walls
-
         new Wall(kw, 6, 6, Direction.EAST);
         new Wall(kw, 5, 6, Direction.EAST);
         new Wall(kw, 4, 6, Direction.EAST);
@@ -64,7 +60,6 @@ public class A3Q3 {
         new Wall(kw, 1, 5, Direction.NORTH);
         new Wall(kw, 1, 6, Direction.NORTH);
 
-
         while (jerrycan.frontIsClear()) {
 
             jerrycan.move();
@@ -73,29 +68,26 @@ public class A3Q3 {
             if (!jerrycan.frontIsClear() && jerrycan.isFacingEast() == true) {
 
                 jerrycan.turnRight();
-                jerrycan.move();
+                if (jerrycan.frontIsClear()) {
+
+                    jerrycan.move();
+                }
+
                 jerrycan.turnRight();
 
             }
             if (!jerrycan.frontIsClear() && jerrycan.isFacingWest() == true) {
 
                 jerrycan.turnLeft();
-                if (jerrycan.frontIsClear()){
-                    
+                if (jerrycan.frontIsClear()) {
+
                     jerrycan.move();
                 }
                 jerrycan.turnLeft();
+
             }
-            
-            
-
-            
-
-
-
-
-
 
         }
+
     }
 }
