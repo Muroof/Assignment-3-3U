@@ -24,7 +24,7 @@ public class A3Q4 {
         City kw = new City();
 
         // create a robot
-        RobotSE jerrycan = new RobotSE(kw, 1, 0, Direction.EAST);
+        RobotSE jerrycan = new RobotSE(kw, 4, 4, Direction.SOUTH);
 
         // create the walls
         new Wall(kw, 6, 5, Direction.EAST);
@@ -54,14 +54,46 @@ public class A3Q4 {
         new Wall(kw, 1, 4, Direction.NORTH);
         new Wall(kw, 1, 5, Direction.NORTH);
 
+
         while (jerrycan.frontIsClear()) {
             jerrycan.move();
 
-            if (!jerrycan.frontIsClear() && jerrycan.isFacingEast()) {
-                
-                
-            }
         }
+
+        while (!jerrycan.frontIsClear()) {
+            jerrycan.turnLeft();
+
+            if (!jerrycan.frontIsClear()) {
+                jerrycan.turnLeft();
+            }
+
+            if (jerrycan.frontIsClear()) {
+                jerrycan.move();
+                jerrycan.turnRight();
+
+                if (jerrycan.frontIsClear()) {
+                    jerrycan.move();
+                    break;
+
+
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
