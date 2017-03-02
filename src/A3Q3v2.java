@@ -24,43 +24,35 @@ public class A3Q3v2 {
         City kw = new City();
 
         // create a robot
-        RobotSE jerrycan = new RobotSE(kw, 1, 0, Direction.EAST);
+        RobotSE jerrycan = new RobotSE(kw, 1, 1, Direction.EAST);
 
         // create the things
         new Thing(kw, 1, 4);
         new Thing(kw, 1, 5);
         new Thing(kw, 1, 3);
         new Thing(kw, 3, 5);
-        new Thing(kw, 4, 6);
+        new Thing(kw, 2, 3);
 
         // create the walls
-        new Wall(kw, 6, 5, Direction.EAST);
-        new Wall(kw, 5, 5, Direction.EAST);
-        new Wall(kw, 4, 5, Direction.EAST);
-        new Wall(kw, 3, 5, Direction.EAST);
-        new Wall(kw, 2, 5, Direction.EAST);
-        new Wall(kw, 1, 5, Direction.EAST);
-
-        new Wall(kw, 5, 5, Direction.SOUTH);
-        new Wall(kw, 5, 4, Direction.SOUTH);
-        new Wall(kw, 5, 3, Direction.SOUTH);
-        new Wall(kw, 5, 2, Direction.SOUTH);
-        new Wall(kw, 5, 1, Direction.SOUTH);
-        new Wall(kw, 5, 0, Direction.SOUTH);
-
-        new Wall(kw, 6, 0, Direction.WEST);
-        new Wall(kw, 5, 0, Direction.WEST);
-        new Wall(kw, 4, 0, Direction.WEST);
-        new Wall(kw, 3, 0, Direction.WEST);
-        new Wall(kw, 2, 0, Direction.WEST);
-        new Wall(kw, 1, 0, Direction.WEST);
-
-        new Wall(kw, 1, 0, Direction.NORTH);
         new Wall(kw, 1, 1, Direction.NORTH);
         new Wall(kw, 1, 2, Direction.NORTH);
         new Wall(kw, 1, 3, Direction.NORTH);
         new Wall(kw, 1, 4, Direction.NORTH);
         new Wall(kw, 1, 5, Direction.NORTH);
+        
+        new Wall(kw, 1, 1, Direction.WEST);
+        new Wall(kw, 2, 1, Direction.WEST);
+        new Wall(kw, 3, 1, Direction.WEST);
+        
+        new Wall(kw, 1, 5, Direction.EAST);
+        new Wall(kw, 2, 5, Direction.EAST);
+        new Wall(kw, 3, 5, Direction.EAST);
+        
+        new Wall(kw, 3, 1, Direction.SOUTH);
+        new Wall(kw, 3, 2, Direction.SOUTH);
+        new Wall(kw, 3, 3, Direction.SOUTH);
+        new Wall(kw, 3, 4, Direction.SOUTH);
+        new Wall(kw, 3, 5, Direction.SOUTH);
 
 
 
@@ -69,6 +61,7 @@ public class A3Q3v2 {
 
             jerrycan.pickAllThings();
             jerrycan.move();
+
 
 
             if (!jerrycan.frontIsClear() && jerrycan.isFacingNorth()) {
@@ -113,9 +106,17 @@ public class A3Q3v2 {
 
 
                 }
+                if (jerrycan.getAvenue() == 0 && jerrycan.getStreet() == 1) {
+                break;
+                
+            }  
+
 
             }
+            
 
+
+         
         }
 
 
