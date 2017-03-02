@@ -109,6 +109,7 @@ public class A3Q3v2 {
                 if (jerrycan.getAvenue() == 0 && jerrycan.getStreet() == 1) {
                 break;
                 
+                
             }  
 
 
