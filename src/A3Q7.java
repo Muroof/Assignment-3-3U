@@ -66,50 +66,28 @@ public class A3Q7 {
         new Wall(kw, 4, 2, Direction.EAST);
         new Wall(kw, 4, 2, Direction.NORTH);
 
-        // navigating jerrycan
-
-        int counter = 0;
-
-
-
-        while (jerrycan.frontIsClear()) {
-            counter++;
-            jerrycan.move();
+        // navigating jerrycan  
+        
+        for(int n = 0; n < 4; n++) {
             
-
-            while (counter == 3) {
-
-                jerrycan.turnLeft();
-                counter = 0;
-                
-                if (jerrycan.isFacingWest() && jerrycan.getStreet() > 2) {
-                    counter = -3;
-                }
-                
-                if (jerrycan.isFacingNorth() && jerrycan.getAvenue() < 4) {
-                    counter = -3;
-                }
-                
-                if (jerrycan.isFacingEast() && jerrycan.getStreet() <= 3)  {
-                    counter = -3;
-                }
-                
-                if (jerrycan.isFacingSouth() && jerrycan.getStreet() == 3 && jerrycan.getAvenue() == 3)   {
-                    break;
-                    
-                }
-                
-                
-                
-            }
+           for (int i = 0; i < 3; i++) {
+               
+               jerrycan.move(3);
+               jerrycan.turnLeft();
+               
+           }
+           for (int a = 0; a < 1; a++) {
+               
+               jerrycan.move(3);
+           }
+           
+           
+       }
+        
 
 
 
-
-
-
-        }
-
+       
 
     }
 }
