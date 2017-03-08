@@ -13,7 +13,7 @@ import becker.robots.Wall;
  *
  * @author ranam3235
  */
-public class A3Q3v4 {
+public class A3Q3 {
 
     /**
      * @param args the command line arguments
@@ -43,18 +43,18 @@ public class A3Q3v4 {
         new Wall(kw, 1, 1, Direction.WEST);
         new Wall(kw, 2, 1, Direction.WEST);
         new Wall(kw, 3, 1, Direction.WEST);
-        new Wall(kw, 4, 1, Direction.WEST);
+        //new Wall(kw, 4, 1, Direction.WEST);
 
         new Wall(kw, 1, 5, Direction.EAST);
         new Wall(kw, 2, 5, Direction.EAST);
         new Wall(kw, 3, 5, Direction.EAST);
-        new Wall(kw, 4, 5, Direction.EAST);
+        //new Wall(kw, 4, 5, Direction.EAST);
 
-        new Wall(kw, 4, 1, Direction.SOUTH);
-        new Wall(kw, 4, 2, Direction.SOUTH);
-        new Wall(kw, 4, 3, Direction.SOUTH);
-        new Wall(kw, 4, 4, Direction.SOUTH);
-        new Wall(kw, 4, 5, Direction.SOUTH);
+        new Wall(kw, 3, 1, Direction.SOUTH);
+        new Wall(kw, 3, 2, Direction.SOUTH);
+        new Wall(kw, 3, 3, Direction.SOUTH);
+        new Wall(kw, 3, 4, Direction.SOUTH);
+        new Wall(kw, 3, 5, Direction.SOUTH);
 
         // moving the robot
 
@@ -118,10 +118,7 @@ public class A3Q3v4 {
             while (jerrycan.getStreet() == 1 && jerrycan.getAvenue() > 1) {
                 jerrycan.move();
 
-                if (jerrycan.getAvenue() == 1 && jerrycan.getStreet() == 1) {
-                    jerrycan.turnRight();
 
-                }
             }
 
 
@@ -130,7 +127,7 @@ public class A3Q3v4 {
 
 
             if (jerrycan.getAvenue() == 1 && jerrycan.getStreet() == 1) {
-                jerrycan.turnRight();
+                jerrycan.turnAround();
                 break;
             }
         }
