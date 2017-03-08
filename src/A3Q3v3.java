@@ -13,7 +13,7 @@ import becker.robots.Wall;
  *
  * @author ranam3235
  */
-public class A3Q3v2 {
+public class A3Q3v3 {
 
     /**
      * @param args the command line arguments
@@ -54,64 +54,58 @@ public class A3Q3v2 {
         new Wall(kw, 3, 4, Direction.SOUTH);
         new Wall(kw, 3, 5, Direction.SOUTH);
 
+        // moving the robot
 
 
 
         while (jerrycan.frontIsClear()) {
-
-            jerrycan.pickAllThings();
             jerrycan.move();
+            jerrycan.pickAllThings();
 
-
-
-            if (!jerrycan.frontIsClear() && jerrycan.isFacingNorth()) {
-
-                jerrycan.turnRight();
-                if (!jerrycan.frontIsClear()) {
-                    jerrycan.turnAround();
-
-
-                }
-
-            }
             if (!jerrycan.frontIsClear() && jerrycan.isFacingEast()) {
-
                 jerrycan.turnRight();
-                jerrycan.pickAllThings();
 
-                if (jerrycan.frontIsClear()) {
-
-                    jerrycan.move();
-                    jerrycan.pickAllThings();
+                if (!jerrycan.frontIsClear()) {
                     jerrycan.turnRight();
-
-                } else if (!jerrycan.frontIsClear()) {
-                    jerrycan.turnAround();
-                    jerrycan.pickAllThings();
+                    
                 }
+                jerrycan.move();
+                jerrycan.turnRight();
+                
+                while (jerrycan.frontIsClear() && jerrycan.getAvenue() < 1) {
+                    jerrycan.move();
+                    if (!jerrycan.frontIsClear() && jerrycan.getAvenue() == 1) {
+                        jerrycan.turnRight();
+                    }
+
+
+                }
+
+
             }
 
             if (!jerrycan.frontIsClear() && jerrycan.isFacingWest()) {
-
                 jerrycan.turnLeft();
-                jerrycan.pickAllThings();
-                if (jerrycan.frontIsClear()) {
 
-                    jerrycan.pickAllThings();
-                    jerrycan.move();
+                if (!jerrycan.frontIsClear()) {
                     jerrycan.turnLeft();
-                } else if (!jerrycan.frontIsClear()) {
-                    jerrycan.turnAround();
-                    jerrycan.pickAllThings();
-
+                    
+                }
+                jerrycan.move();
+                jerrycan.turnLeft();
+                while (jerrycan.frontIsClear() && jerrycan.getStreet() < 1) {
+                    jerrycan.move();
+                    if (!jerrycan.frontIsClear() && jerrycan.getStreet() == 1) {
+                        jerrycan.turnRight();
+                    }
 
                 }
-
+            }
+            
+            if (jerrycan.getAvenue() == 1 && jerrycan.getStreet() == 1) {
+                break;
             }
 
-
         }
-
-
     }
 }
