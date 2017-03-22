@@ -68,14 +68,17 @@ public class A3Q7 {
 
         // navigating jerrycan  
         
+        // essentially repeat this four times
         for(int n = 0; n < 4; n++) {
             
+           // repeat following for three sides
            for (int i = 0; i < 3; i++) {
                
                jerrycan.move(3);
                jerrycan.turnLeft();
                
            }
+           // after going around 4 squares, move three spaces and stop at the center
            for (int a = 0; a < 1; a++) {
                
                jerrycan.move(3);

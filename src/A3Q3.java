@@ -48,7 +48,7 @@ public class A3Q3 {
         new Wall(kw, 1, 5, Direction.EAST);
         new Wall(kw, 2, 5, Direction.EAST);
         new Wall(kw, 3, 5, Direction.EAST);
-        //new Wall(kw, 4, 5, Direction.EAST);
+       //new Wall(kw, 4, 5, Direction.EAST);
 
         new Wall(kw, 3, 1, Direction.SOUTH);
         new Wall(kw, 3, 2, Direction.SOUTH);
@@ -63,10 +63,14 @@ public class A3Q3 {
         while (jerrycan.frontIsClear()) {
             jerrycan.move();
             jerrycan.pickAllThings();
+            
+            // if jerry is facing a wall, in the east direction, do the following
 
             if (!jerrycan.frontIsClear() && jerrycan.isFacingEast()) {
                 jerrycan.turnRight();
-
+                
+                
+                // if there is another wall facing jerry after he turns, he is in a corner and should move accordingly 
                 if (!jerrycan.frontIsClear()) {
                     jerrycan.turnAround();
                     break;
@@ -77,9 +81,13 @@ public class A3Q3 {
                 jerrycan.turnRight();
 
             }
+            
+            // if jerry is facing a wall, in the west direction, do the following
 
             if (!jerrycan.frontIsClear() && jerrycan.isFacingWest()) {
                 jerrycan.turnLeft();
+                
+                // if there is another wall facing jerry after he turns, he is in a corner and should move accordingly
 
                 if (!jerrycan.frontIsClear()) {
                     jerrycan.turnAround();
@@ -95,7 +103,8 @@ public class A3Q3 {
 
 
         }
-
+        
+        // when jerry is on street 1 and greater than avenue 1, navigate him towards acenue 1
         while (jerrycan.getAvenue() > 1 && jerrycan.getStreet() == 1) {
             if (!jerrycan.frontIsClear()) {
                 jerrycan.turnLeft();
@@ -106,7 +115,7 @@ public class A3Q3 {
 
         }
 
-
+        // while jerry is on a street greater than 1, do the following
         while (jerrycan.getStreet() > 1) {
 
             jerrycan.move();
@@ -125,7 +134,7 @@ public class A3Q3 {
 
 
 
-
+            // once jerry returns to intersection 1, 1 STOP
             if (jerrycan.getAvenue() == 1 && jerrycan.getStreet() == 1) {
                 jerrycan.turnAround();
                 break;

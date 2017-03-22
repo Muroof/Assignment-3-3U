@@ -29,6 +29,7 @@ public class A3Q5 {
         // show a thing count
         kw.showThingCounts(true);
         
+        // spawn in a stack of things
         new Thing (kw, 2, 3);
         new Thing (kw, 2, 3);
         new Thing (kw, 2, 3);
@@ -43,6 +44,8 @@ public class A3Q5 {
         
         // navigating jerrycan
         
+        
+        // while jerry can pick something up do the following
         while (jerrycan.canPickThing()) {
             jerrycan.pickThing();
             jerrycan.move();
@@ -53,6 +56,7 @@ public class A3Q5 {
             jerrycan.move();
             jerrycan.turnAround();
             
+            // if jerry can't pick something up, move forward and break (STOP)
             if (!jerrycan.canPickThing()) {
                 jerrycan.move();
                         break;

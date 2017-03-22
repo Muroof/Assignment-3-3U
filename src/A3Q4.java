@@ -54,19 +54,21 @@ public class A3Q4 {
         new Wall(kw, 1, 4, Direction.NORTH);
         new Wall(kw, 1, 5, Direction.NORTH);
 
-
+        // while the front is clear, move forward jerry
         while (jerrycan.frontIsClear()) {
             jerrycan.move();
 
         }
-
+        // if the front isn't clear, turn left jerry 
         while (!jerrycan.frontIsClear()) {
             jerrycan.turnLeft();
-
+            
+            // check again if the front is clear, if not turn left
             if (!jerrycan.frontIsClear()) {
                 jerrycan.turnLeft();
             }
-
+            
+            // if the front is clear after initialy turning left, do the following 
             if (jerrycan.frontIsClear()) {
                 jerrycan.move();
                 jerrycan.turnRight();
